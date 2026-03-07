@@ -8,6 +8,7 @@ import {
 } from "react-router"
 
 import { ThemeProvider } from "~/components/theme-provider"
+import { Navbar } from "~/components/navbar"
 import type { Route } from "./+types/root"
 import "./app.css"
 
@@ -21,7 +22,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <ThemeProvider defaultTheme="system">{children}</ThemeProvider>
+        <ThemeProvider defaultTheme="dark">
+          <Navbar />
+          {children}
+        </ThemeProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
