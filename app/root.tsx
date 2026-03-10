@@ -24,7 +24,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <ThemeProvider defaultTheme="dark">
           <Navbar />
-          {children}
+          <div className="mx-auto max-w-screen-lg border-x border-border/100">
+            {children}
+          </div>
         </ThemeProvider>
         <ScrollRestoration />
         <Scripts />
