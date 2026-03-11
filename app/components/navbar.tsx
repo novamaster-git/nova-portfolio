@@ -14,8 +14,8 @@ import { ModeToggle } from "~/components/mode-toggle"
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/100 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-14 max-w-screen-lg items-center justify-between border-x border-border/100 px-4">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+      <div className="container mx-auto flex h-14 max-w-5xl items-center justify-between border-x border-border px-4">
         {/* Left: Logo */}
         <div className="flex items-center space-x-2">
           <Link to="/" className="mr-6 flex items-center space-x-2">
