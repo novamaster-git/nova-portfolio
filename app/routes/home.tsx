@@ -18,12 +18,15 @@ import {
   Globe,
   Linkedin,
   ArrowRight,
+  Crown,
 } from "lucide-react"
+import { SparklesText } from "~/components/ui/sparkles-text"
+
 import { AnimatedGridPattern } from "~/components/ui/animated-grid-pattern"
 export default function Home() {
   return (
     <div>
-      <div className="container mx-auto flex max-w-5xl flex-row border-x border-border">
+      <div className="container mx-auto flex max-w-5xl flex-row border-x border-border py-5">
         <div className="flex-2 p-5">
           <Card className="relative overflow-hidden border border-white/20 bg-white/10 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-black/20">
             <CardHeader className="flex flex-row items-center justify-center">
@@ -55,7 +58,7 @@ export default function Home() {
             <LightRays speed={8} />
             <CardContent className="relative flex flex-col gap-3 bg-transparent">
               <div className="flex flex-row items-center gap-2">
-                <Globe />
+                <Crown />
                 <h3 className="text-lg font-bold">ABOUT ME</h3>
               </div>
               <h1 className="text-4xl font-bold">
@@ -94,7 +97,7 @@ export default function Home() {
             numSquares={200}
             className="z-5"
           />
-          <div className="absolute inset-0 z-10 backdrop-blur supports-backdrop-filter:bg-background/20" />
+          <div className="absolute inset-0 z-10 backdrop-blur supports-backdrop-filter:bg-background/40" />
           <div className="relative z-20">
             <h2 className="mb-2 text-center text-sm font-medium tracking-[0.3em] text-foreground/40 uppercase">
               Debugging Since
@@ -103,8 +106,31 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto flex max-w-5xl flex-row border-x border-border">
-        <h1>soumen</h1>
+      <div className="container mx-auto flex max-w-5xl flex-row border-x border-border p-5">
+        <div className="mt-5 flex flex-3 flex-col gap-4 pr-5">
+          <SparklesText className="text-3xl font-medium">
+            Little Bit More About Me.
+          </SparklesText>
+          <p>
+            I started coding from scratch 5 years ago in 2020, beginning with
+            HTML, CSS, and JavaScript to build websites.
+          </p>
+          <p>
+            My first project was a simple website built with HTML, CSS, and
+            JavaScript (~mid-2020). As I progressed, I mastered React.js and
+            Next.js. Now, I work with all the latest tech stacks to build
+            production-ready SaaS applications.
+          </p>
+        </div>
+        <div className="mt-5 flex-1">
+          <div className="h-50 border border-border">
+            <img
+              src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczd3N2gybTdzemN4cGlpN3BrMXh1N2pmbnB4dDlpdWxkc3B1cG9tZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BomawdqbHwpbZy5faU/giphy.gif"
+              alt="whoami"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
       </div>
     </div>
   )
