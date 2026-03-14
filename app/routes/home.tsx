@@ -1,4 +1,5 @@
 import { Button } from "~/components/ui/button"
+import { ExperienceTimeline } from "~/components/experience-timeline"
 import { ModeToggle } from "~/components/mode-toggle"
 import {
   Card,
@@ -13,7 +14,6 @@ import { CountupComponent } from "~/components/countup-component"
 
 import {
   ArrowBigDownDash,
-  EarthIcon,
   Github,
   Globe,
   Linkedin,
@@ -23,7 +23,13 @@ import {
 import { SparklesText } from "~/components/ui/sparkles-text"
 
 import { AnimatedGridPattern } from "~/components/ui/animated-grid-pattern"
+import { DotPattern } from "~/components/ui/dot-pattern"
+import { cn } from "~/lib/utils"
+import { AuroraText } from "~/components/ui/aurora-text"
+
 export default function Home() {
+  const shadowColor = "white"
+
   return (
     <div>
       <div className="container mx-auto flex max-w-5xl flex-row border-x border-border py-5">
@@ -106,7 +112,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto flex max-w-5xl flex-row border-x border-border p-5">
+      <div className="container mx-auto flex max-w-5xl flex-row border-x border-border px-5 py-15">
         <div className="mt-5 flex flex-3 flex-col gap-4 pr-5">
           <SparklesText className="text-3xl font-medium">
             Little Bit More About Me.
@@ -131,6 +137,26 @@ export default function Home() {
             />
           </div>
         </div>
+      </div>
+      <div className="relative overflow-hidden border-y border-border">
+        <div className="relative mx-auto max-w-5xl overflow-hidden border-x p-5 py-10">
+          <DotPattern
+            width={20}
+            height={20}
+            cx={1}
+            cy={1}
+            cr={1}
+            className={cn(
+              "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
+            )}
+          />
+          <h1 className="text-center text-4xl font-bold tracking-tighter md:text-3xl lg:text-5xl">
+            Professional <AuroraText>Expariance</AuroraText>
+          </h1>
+        </div>
+      </div>
+      <div className="relative mx-auto max-w-5xl overflow-hidden border-x">
+        <ExperienceTimeline />
       </div>
     </div>
   )
