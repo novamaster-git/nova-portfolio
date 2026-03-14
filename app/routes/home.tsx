@@ -26,7 +26,9 @@ import { AnimatedGridPattern } from "~/components/ui/animated-grid-pattern"
 import { DotPattern } from "~/components/ui/dot-pattern"
 import { cn } from "~/lib/utils"
 import { AuroraText } from "~/components/ui/aurora-text"
-
+import { StripedPattern } from "components/magicui/striped-pattern"
+import { Input } from "~/components/ui/input"
+import { Textarea } from "~/components/ui/textarea"
 export default function Home() {
   const shadowColor = "white"
 
@@ -157,6 +159,65 @@ export default function Home() {
       </div>
       <div className="relative mx-auto max-w-5xl overflow-hidden border-x">
         <ExperienceTimeline />
+      </div>
+      <div className="relative overflow-hidden border-y border-border">
+        <div className="relative mx-auto max-w-5xl overflow-hidden border-x p-5 py-10">
+          <StripedPattern
+            className="[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+            style={{ opacity: 0.2 }}
+          />
+          <h1 className="text-center text-4xl font-bold tracking-tighter md:text-3xl lg:text-5xl">
+            Let's <AuroraText>Connect</AuroraText>
+          </h1>
+        </div>
+      </div>
+      <div className="relative mx-auto max-w-5xl overflow-hidden border-x">
+        <form
+          className="mx-auto flex max-w-3xl flex-col gap-4 p-6"
+          method="post"
+        >
+          <div className="flex flex-col gap-4 md:flex-row">
+            <div className="flex flex-1 flex-col">
+              <label className="mb-2 font-medium" htmlFor="name">
+                Name
+              </label>
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                required
+                className="rounded border-border bg-background"
+              />
+            </div>
+            <div className="flex flex-1 flex-col">
+              <label className="mb-2 font-medium" htmlFor="email">
+                Email
+              </label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                required
+                className="rounded border-border bg-background"
+              />
+            </div>
+          </div>
+
+          <label className="font-medium" htmlFor="message">
+            Message
+          </label>
+          <Textarea
+            id="message"
+            name="message"
+            required
+            rows={5}
+            className="rounded border-border bg-background"
+          />
+
+          <Button type="submit" className="mt-2">
+            Send Message
+          </Button>
+        </form>
       </div>
     </div>
   )
