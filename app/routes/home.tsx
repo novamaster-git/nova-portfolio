@@ -1,14 +1,9 @@
 import { Button } from "~/components/ui/button"
 import { ExperienceTimeline } from "~/components/experience-timeline"
-import { ModeToggle } from "~/components/mode-toggle"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "~/components/ui/card"
+
+import { Card, CardContent, CardFooter, CardHeader } from "~/components/ui/card"
+import { Particles } from "~/components/ui/particles"
+
 import { LightRays } from "~/components/ui/light-rays"
 import { CountupComponent } from "~/components/countup-component"
 
@@ -71,8 +66,6 @@ const skills = {
   ],
 }
 export default function Home() {
-  const shadowColor = "white"
-
   return (
     <div>
       <div className="container mx-auto flex max-w-5xl flex-row border-x border-border py-5">
@@ -331,6 +324,51 @@ export default function Home() {
             Send Message
           </Button>
         </form>
+      </div>
+      <div className="relative overflow-hidden border-y border-border">
+        <div className="relative mx-auto max-w-5xl overflow-hidden border-x">
+          <StripedPattern
+            className="[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+            style={{ opacity: 0.4 }}
+          />
+          <div className="flex flex-col items-center justify-between px-4 py-6 md:flex-row">
+            <div>
+              <div className="flex flex-row items-center gap-1 text-muted-foreground">
+                <Globe className="h-4 w-4" />
+                <span>
+                  <span className="leading-none">1,234</span> visitors
+                </span>
+              </div>
+              <p>
+                <span>&copy; {new Date().getFullYear()} Novamaster</span>
+              </p>
+            </div>
+            <div className="mt-4 flex items-center gap-4 text-muted-foreground md:mt-0">
+              <div className="flex flex-col items-end md:items-center">
+                <div className="flex gap-4">
+                  <a
+                    href="https://github.com/novamaster"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary"
+                    aria-label="GitHub"
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/novamaster"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
