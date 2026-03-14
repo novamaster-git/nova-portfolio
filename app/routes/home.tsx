@@ -29,6 +29,47 @@ import { AuroraText } from "~/components/ui/aurora-text"
 import { StripedPattern } from "components/magicui/striped-pattern"
 import { Input } from "~/components/ui/input"
 import { Textarea } from "~/components/ui/textarea"
+import { MorphingText } from "~/components/ui/morphing-text"
+import { WordRotate } from "~/components/ui/word-rotate"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "~/components/ui/tabs"
+const skills = {
+  frontend: [
+    "React.js",
+    "Next.js",
+    "TypeScript",
+    "Redux",
+    "Tailwind CSS",
+    "HTML5",
+    "CSS3",
+    "Sass",
+    "Figma",
+    "Vite",
+  ],
+  backend: [
+    "Node.js",
+    "Express.js",
+    "NestJS",
+    "MongoDB",
+    "PostgreSQL",
+    "Prisma",
+    "REST API",
+    "GraphQL",
+    "Redis",
+    "Docker",
+  ],
+  ai: [
+    "Python",
+    "TensorFlow",
+    "PyTorch",
+    "OpenAI API",
+    "LangChain",
+    "Hugging Face",
+    "Scikit-learn",
+    "Pandas",
+    "NLP",
+    "Computer Vision",
+  ],
+}
 export default function Home() {
   const shadowColor = "white"
 
@@ -159,6 +200,78 @@ export default function Home() {
       </div>
       <div className="relative mx-auto max-w-5xl overflow-hidden border-x">
         <ExperienceTimeline />
+      </div>
+      <div className="relative overflow-hidden border-y border-border bg-gradient-to-r from-background via-transparent to-background">
+        <div className="relative mx-auto max-w-5xl overflow-hidden border-x p-5 py-12">
+          <StripedPattern
+            className="[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+            style={{ opacity: 0.15 }}
+          />
+          <h1 className="mb-4 text-center text-5xl font-extrabold tracking-tight">
+            <WordRotate words={["Skills", "Tools", "Technologies"]} />
+          </h1>
+          <p className="mb-8 text-center text-lg text-muted-foreground">
+            Explore my expertise across modern stacks, frameworks, and AI
+            technologies.
+          </p>
+        </div>
+      </div>
+      <div className="relative mx-auto max-w-5xl overflow-hidden border-x pb-12">
+        <Tabs defaultValue="frontend" className="w-full">
+          <TabsList className="mb-8 flex justify-center gap-4 rounded-lg bg-background/60 shadow">
+            <TabsTrigger
+              value="frontend"
+              className="px-6 py-2 text-lg font-semibold"
+            >
+              Frontend
+            </TabsTrigger>
+            <TabsTrigger
+              value="backend"
+              className="px-6 py-2 text-lg font-semibold"
+            >
+              Backend
+            </TabsTrigger>
+            <TabsTrigger value="ai" className="px-6 py-2 text-lg font-semibold">
+              AI
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="frontend">
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
+              {skills.frontend.map((skill) => (
+                <div
+                  key={skill}
+                  className="rounded-lg border border-border bg-background/80 px-4 py-3 text-center font-medium shadow-md transition-colors hover:bg-primary/10"
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="backend">
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
+              {skills.backend.map((skill) => (
+                <div
+                  key={skill}
+                  className="rounded-lg border border-border bg-background/80 px-4 py-3 text-center font-medium shadow-md transition-colors hover:bg-primary/10"
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="ai">
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
+              {skills.ai.map((skill) => (
+                <div
+                  key={skill}
+                  className="rounded-lg border border-border bg-background/80 px-4 py-3 text-center font-medium shadow-md transition-colors hover:bg-primary/10"
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
       <div className="relative overflow-hidden border-y border-border">
         <div className="relative mx-auto max-w-5xl overflow-hidden border-x p-5 py-10">
