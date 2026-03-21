@@ -28,6 +28,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="icon" type="image/svg+xml" href="/assets/image/crown.svg" />
         <Meta />
         <Links />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                const storageKey = "ui-theme";
+                const theme = localStorage.getItem(storageKey) || "system";
+                const root = document.documentElement;
+                root.classList.remove("light", "dark");
+                if (theme === "system") {
+                  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light";
+                  root.classList.add(systemTheme);
+                } else {
+                  root.classList.add(theme);
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body>
         <ThemeProvider defaultTheme="dark">
