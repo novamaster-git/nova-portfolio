@@ -1,3 +1,4 @@
+import { ProjectTimelineCards } from "~/components/project-timeline-cards"
 import { FlickeringGrid } from "~/components/ui/flickering-grid"
 import { WordRotate } from "~/components/ui/word-rotate"
 
@@ -32,7 +33,9 @@ export default function Home() {
           </h1>
         </div>
       </div>
-      <div className="relative mx-auto max-w-5xl overflow-hidden border-x"></div>
+      <div className="relative mx-auto max-w-5xl overflow-hidden border-x">
+        <ProjectTimelineCards />
+      </div>
     </div>
   )
 }

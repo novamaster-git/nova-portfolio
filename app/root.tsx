@@ -11,6 +11,7 @@ import { ThemeProvider } from "~/components/theme-provider"
 import { Navbar } from "~/components/navbar"
 import type { Route } from "./+types/root"
 import "./app.css"
+import Footer from "./components/footer"
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,6 +26,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ThemeProvider defaultTheme="dark">
           <Navbar />
           <div>{children}</div>
+          <Footer />
         </ThemeProvider>
         <ScrollRestoration />
         <Scripts />
