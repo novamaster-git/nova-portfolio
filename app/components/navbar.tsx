@@ -3,7 +3,6 @@ import {
   CircleAlertIcon,
   CircleCheckIcon,
   CircleDashedIcon,
-  Search,
 } from "lucide-react"
 
 import {
@@ -13,7 +12,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "~/components/ui/navigation-menu"
 import { ModeToggle } from "~/components/mode-toggle"
 
@@ -84,27 +82,24 @@ export function NavigationMenuDemo() {
           <NavigationMenuTrigger>About Me</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="w-96">
-              <ListItem href="/docs" title="Introduction">
+              <ListItem href="/" title="Introduction">
                 This is a personal portfolio website built with React and
                 Tailwind CSS, showcasing my projects, experience, and skills as
                 a web developer. It serves as a platform to share my work and
                 connect with potential employers or collaborators.
               </ListItem>
-              <ListItem href="/docs/installation" title="Timer">
-                This showing my experience timeline, highlighting my
-                professional journey, key milestones, and achievements.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Experience">
+
+              <ListItem href="#experience" title="Experience">
                 This section highlights my professional experience, including
                 previous roles, projects, and accomplishments in the field of
                 web development.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Skills">
+              <ListItem href="#skills" title="Skills">
                 This section highlights my key skills and expertise in web
                 development, including proficiency in React, Tailwind CSS, and
                 other relevant technologies.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Contact Me">
+              <ListItem href="#contact" title="Contact Me">
                 This section provides information on how to get in touch with
                 me, including email, social media, and other contact methods.
               </ListItem>

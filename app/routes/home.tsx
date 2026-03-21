@@ -1,4 +1,4 @@
-import { ExperienceTimeline } from "~/components/experience-timeline"
+import { ExperienceTimeline } from "~/components/sections/experience.section"
 import { CountupComponent } from "~/components/countup-component"
 import DottedSection from "~/components/section-headers/dotted-section"
 import StripedSection from "~/components/section-headers/striped-section"
@@ -22,10 +22,13 @@ export default function Home() {
         </div>
       </BlurGridContainer>
       <AboutMeSection />
+      <div id="experience" />
       <DottedSection fTitle="Professional" sTitle="Experience" />
       <ExperienceTimeline />
+      <div id="skills" />
       <StripedSection title={["Skills", "Tools", "Technologies"]} />
       <SkillsSection />
+      <div id="contact" />
       <StripedAuroraSection fTitle="Let's" sTitle="Connect" />
       <ContactMeSection />
     </div>

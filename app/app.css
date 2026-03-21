@@ -191,3 +191,17 @@
     @apply font-sans;
     }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#experience {
+  scroll-margin-top: 80px; /* adjust based on navbar height */
+}
+#skills {
+  scroll-margin-top: 80px; /* adjust based on navbar height */
+}
+#contact {
+  scroll-margin-top: 80px; /* adjust based on navbar height */
+}

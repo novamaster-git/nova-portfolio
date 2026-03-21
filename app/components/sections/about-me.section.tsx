@@ -2,7 +2,10 @@ import { SparklesText } from "../ui/sparkles-text"
 
 export default function AboutMeSection() {
   return (
-    <div className="container mx-auto flex max-w-5xl flex-row border-x border-border px-5 py-15">
+    <div
+      className="container mx-auto flex max-w-5xl flex-row border-x border-border px-5 py-15"
+      id="about"
+    >
       <div className="mt-5 flex flex-3 flex-col gap-4 pr-5">
         <SparklesText className="text-3xl font-medium">
           Little Bit More About Me.
