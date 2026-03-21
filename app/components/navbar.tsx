@@ -1,4 +1,4 @@
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 import {
   CircleAlertIcon,
   CircleCheckIcon,
@@ -39,47 +39,33 @@ export function Navbar() {
 }
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Client Projects",
+    href: "/portfolio#client-projects",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "A showcase of my work with various clients, highlighting the projects I've contributed to and the impact they've had.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Personal Projects",
+    href: "/portfolio#personal-projects",
     description:
-      "For sighted users to preview content available behind a link.",
+      "A showcase of my personal projects, highlighting the work I've done independently and the skills I've developed.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Weekend Projects",
+    href: "/portfolio#weekend-projects",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "A showcase of my weekend projects, highlighting the work I've done in my spare time and the skills I've developed.",
   },
 ]
 export function NavigationMenuDemo() {
+  const navigator = useNavigate()
   return (
     <NavigationMenu viewport={false}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>About Me</NavigationMenuTrigger>
+          <NavigationMenuTrigger onClick={() => navigator("/")}>
+            About Me
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="w-96">
               <ListItem href="/" title="Introduction">
@@ -89,17 +75,17 @@ export function NavigationMenuDemo() {
                 connect with potential employers or collaborators.
               </ListItem>
 
-              <ListItem href="#experience" title="Experience">
+              <ListItem href="/#experience" title="Experience">
                 This section highlights my professional experience, including
                 previous roles, projects, and accomplishments in the field of
                 web development.
               </ListItem>
-              <ListItem href="#skills" title="Skills">
+              <ListItem href="/#skills" title="Skills">
                 This section highlights my key skills and expertise in web
                 development, including proficiency in React, Tailwind CSS, and
                 other relevant technologies.
               </ListItem>
-              <ListItem href="#contact" title="Contact Me">
+              <ListItem href="/#contact" title="Contact Me">
                 This section provides information on how to get in touch with
                 me, including email, social media, and other contact methods.
               </ListItem>
@@ -107,9 +93,11 @@ export function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:flex">
-          <NavigationMenuTrigger>Portfolio</NavigationMenuTrigger>
+          <NavigationMenuTrigger onClick={() => navigator("/portfolio")}>
+            Portfolio
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+            <ul className="grid w-[400px] gap-2 md:w-[500px] lg:w-[400px]">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
