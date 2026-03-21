@@ -2,6 +2,11 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform, useInView } from "motion/react"
 import { Button } from "./ui/button"
 import { Badge } from "./ui/badge"
+import { InteractiveHoverButton } from "~/components/ui/interactive-hover-button"
+import { RippleButton } from "./ui/ripple-button"
+import { ArrowUpRight, Link2 } from "lucide-react"
+import { Separator } from "~/components/ui/separator"
+
 interface Project {
   img: string
   title: string
@@ -18,7 +23,6 @@ const projects: Array<Project> = [
     bullets: [
       "Built a Chrome extension that converts timestamps to the user's local timezone, enhancing user experience across different regions.",
       "Implemented the extension using React for the frontend and Node.js for backend processing, ensuring a responsive and efficient user interface.",
-      "Deployed the extension on the Chrome Web Store, achieving over 10,000 downloads and receiving positive feedback for its functionality and ease of use.",
     ],
     techStack: ["React", "Node.js", "Chrome Extensions API"],
     img: "/assets/image/projects/dtc_ss.png",
@@ -62,7 +66,9 @@ function TimelineEntry({ project }: { project: Project }) {
                   </li>
                 ))}
               </ul>
-
+              <p className="mt-4 text-sm leading-2 font-medium uppercase opacity-70">
+                Technologies:
+              </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {project.techStack.map((tech, i) => (
                   <Badge key={i} variant={"default"} className="p-3">
@@ -71,8 +77,18 @@ function TimelineEntry({ project }: { project: Project }) {
                 ))}
               </div>
             </div>
-            <div className="flex justify-end">
-              <Button variant={"secondary"}>Read more</Button>
+            <Separator className="my-5" />
+            <div className="flex justify-end gap-2">
+              <RippleButton className="flex flex-row items-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white">
+                <div className="flex flex-row items-center">
+                  <Link2 className="mr-2 h-4 w-4" /> View Project
+                </div>
+              </RippleButton>
+              <RippleButton className="flex flex-row items-center rounded-lg px-4 py-2 text-sm font-medium text-white">
+                <div className="flex flex-row items-center">
+                  Read More <ArrowUpRight className="ml-2 h-4 w-4" />
+                </div>
+              </RippleButton>
             </div>
           </div>
         </div>
