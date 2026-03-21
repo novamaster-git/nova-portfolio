@@ -1,4 +1,4 @@
-import { StripedPattern } from "components/magicui/striped-pattern"
+import { StripedPattern } from "~/components/ui/striped-pattern"
 import { WordRotate } from "../ui/word-rotate"
 export default function StripedSection({ title }: { title: Array<string> }) {
   return (

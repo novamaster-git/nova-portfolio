@@ -1,4 +1,4 @@
-import { StripedPattern } from "components/magicui/striped-pattern"
+import { StripedPattern } from "../ui/striped-pattern"
 import { AuroraText } from "../ui/aurora-text"
 
 export default function StripedAuroraSection({

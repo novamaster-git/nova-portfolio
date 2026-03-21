@@ -1,4 +1,4 @@
-import { StripedPattern } from "components/magicui/striped-pattern"
+import { StripedPattern } from "~/components/ui/striped-pattern"
 
 import { Globe, Linkedin, Github } from "lucide-react"
 export default function Footer() {
