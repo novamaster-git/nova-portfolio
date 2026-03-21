@@ -19,6 +19,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="NovaMaster Portfolio - Showcase of my projects, experience, and skills as a web developer."
+        />
+
+        <title>NovaMaster Portfolio</title>
+        <link rel="icon" type="image/svg+xml" href="/assets/image/crown.svg" />
         <Meta />
         <Links />
       </head>
