@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { use, useRef } from "react"
 import { motion, useScroll, useTransform, useInView } from "motion/react"
 import { Button } from "./ui/button"
 import { Badge } from "./ui/badge"
@@ -6,6 +6,7 @@ import { InteractiveHoverButton } from "~/components/ui/interactive-hover-button
 import { RippleButton } from "./ui/ripple-button"
 import { ArrowUpRight, Link2 } from "lucide-react"
 import { Separator } from "~/components/ui/separator"
+import { useNavigate } from "react-router"
 
 interface Project {
   img: string
@@ -42,6 +43,7 @@ const projects: Array<Project> = [
 ]
 
 function TimelineEntry({ project }: { project: Project }) {
+  const navigate = useNavigate()
   return (
     <div className="border-y border-border bg-transparent px-5 py-5 backdrop-blur-sm supports-backdrop-filter:bg-transparent">
       <div className="flex flex-row">
@@ -84,7 +86,12 @@ function TimelineEntry({ project }: { project: Project }) {
                   <Link2 className="mr-2 h-4 w-4" /> View Project
                 </div>
               </RippleButton>
-              <RippleButton className="flex flex-row items-center rounded-lg px-4 py-2 text-sm font-medium text-white">
+              <RippleButton
+                className="flex flex-row items-center rounded-lg px-4 py-2 text-sm font-medium text-white"
+                onClick={() =>
+                  navigate("/portfolio/client-projects/dtc-dev-time-converter")
+                }
+              >
                 <div className="flex flex-row items-center">
                   Read More <ArrowUpRight className="ml-2 h-4 w-4" />
                 </div>
