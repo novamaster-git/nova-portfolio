@@ -3,6 +3,9 @@ import {
   CircleAlertIcon,
   CircleCheckIcon,
   CircleDashedIcon,
+  Link2,
+  Send,
+  Toolbox,
 } from "lucide-react"
 
 import {
@@ -97,7 +100,7 @@ export function NavigationMenuDemo() {
             Portfolio
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-2 md:w-[500px] lg:w-[400px]">
+            <ul className="grid w-100 gap-2 md:w-125 lg:w-100">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
@@ -113,35 +116,30 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>More</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[200px]">
+            <ul className="grid w-50">
               <li>
                 <NavigationMenuLink asChild>
                   <Link to="#" className="flex-row items-center gap-2">
-                    <CircleAlertIcon />
-                    Backlog
+                    <Link2 />
+                    Links
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link to="#" className="flex-row items-center gap-2">
-                    <CircleDashedIcon />
-                    To Do
+                    <Send />
+                    Contact Me
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link to="#" className="flex-row items-center gap-2">
-                    <CircleCheckIcon />
-                    Done
+                    <Toolbox />
+                    Tools
                   </Link>
                 </NavigationMenuLink>
               </li>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        {/* <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link to="/docs">Docs</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   )
