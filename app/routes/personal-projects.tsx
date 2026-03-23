@@ -5,13 +5,13 @@ import { ProjectTimelineCards } from "~/components/project-timeline-cards"
 import SimpleRotatingSection from "~/components/section-headers/simple-rotating-section"
 
 import { RippleButton } from "~/components/ui/ripple-button"
-export default function ClientProjects() {
+export default function PersonalProjects() {
   const navigate = useNavigate()
   return (
     <div>
       <SimpleRotatingSection
         fullWidth={false}
-        titles={["Client Projects"]}
+        titles={["Personal Projects"]}
         backButtonText={
           <RippleButton
             className="flex flex-row items-center rounded-lg p-2 text-sm font-medium text-white"
@@ -26,7 +26,7 @@ export default function ClientProjects() {
       <PageBreadcrumb
         links={[
           { name: "Portfolio", href: "/portfolio" },
-          { name: "Client Projects" },
+          { name: "Personal Projects" },
         ]}
       />
       <ProjectTimelineCards />

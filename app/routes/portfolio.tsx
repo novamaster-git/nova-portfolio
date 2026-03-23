@@ -25,6 +25,16 @@ export default function Home() {
       />
       <ProjectTimelineCards />
       <SimpleRotatingSection
+        rightButtonText={
+          <RippleButton
+            onClick={() => navigate("/portfolio/personal-projects")}
+            className="flex flex-row items-center rounded-lg px-4 py-2 text-sm font-medium text-white"
+          >
+            <div className="flex flex-row items-center">
+              See All <ArrowRight className="ml-2 h-4 w-4" />
+            </div>
+          </RippleButton>
+        }
         titles={[
           "Personal Projects",
           "Weekend Projects",
