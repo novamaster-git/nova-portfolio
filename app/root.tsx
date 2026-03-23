@@ -13,6 +13,18 @@ import type { Route } from "./+types/root"
 import "./app.css"
 import Footer from "./components/footer"
 
+import {
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  Drawer,
+  DrawerTitle,
+  DrawerTrigger,
+} from "./components/ui/drawer"
+import { Button } from "./components/ui/button"
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
