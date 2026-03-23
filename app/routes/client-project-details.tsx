@@ -64,6 +64,13 @@ export default function PersonalProjectDetails() {
           dangerouslySetInnerHTML={{ __html: project.html }}
         />
       </div>
+      <div className="relative mx-auto max-w-5xl border-x border-t p-4">
+        <div className="flex flex-col items-start justify-between gap-4 md:flex-row">
+          <div>
+            <p>Last Updated: 12 Jan 2026, 12:00 PM</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
